@@ -46,6 +46,11 @@ public class CuentaBanco {
         if (cantidad<0)
             throw new Exception("No se puede ingresar una cantidad negativa");
         setSaldo(getSaldo() + cantidad);
+        
+        if (cantidad > 5000)
+            throw new Exception("Para ingresar mas de 5000 necesitas confirmacion");
+        	//Llamar al método requestConfirmation()
+        setSaldo(getSaldo() + cantidad);
     }
     /**
      * Get amount in this account
